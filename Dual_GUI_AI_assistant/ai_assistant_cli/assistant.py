@@ -1,13 +1,10 @@
 import sys
 import os
 
-
-# Add the parent directory to the path to find the 'shared' module
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from shared.prompts import qa_prompts, summary_prompts, creative_prompts
 from shared.core import get_ai_response, save_feedback
-# All the duplicated functions (get_ai_response, save_feedback, etc.) can be deleted from this file.
 
 def choose_prompt(prompts_dict):
     # ... (this function remains the same)
@@ -27,7 +24,6 @@ def choose_prompt(prompts_dict):
         return default_key, prompts_dict[default_key]
 
 def main():
-    # ... (your main loop remains the same, it will now call the imported functions)
     while True:
         print("\n=== AI Assistant CLI ===")
         print("1. Answer Questions")
@@ -74,4 +70,5 @@ def main():
             continue
 
 if __name__ == "__main__":
+
     main()
