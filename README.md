@@ -74,4 +74,4 @@ You can run either the command-line or the web version of the assistant.
 The application will create the following files in the root `internship` directory:
 
 - `conversation_history.json`: A log of all prompts and the AI's responses.
-- `feedback.json`: A log of
+- `feedback.json`: A log of all feedback submitted by users.
