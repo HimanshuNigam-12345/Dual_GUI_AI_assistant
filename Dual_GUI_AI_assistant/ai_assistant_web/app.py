@@ -2,15 +2,12 @@ import sys
 import os
 from flask import Flask, render_template, request
 
-# Add the parent directory to the path to find the 'shared' module
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from shared.prompts import qa_prompts, summary_prompts, creative_prompts
 from shared.core import get_ai_response, save_feedback
 
 app = Flask(__name__)
-
-# All the duplicated functions (get_ai_response, save_feedback, etc.) can be deleted from this file.
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -58,4 +55,5 @@ def feedback():
     return "Feedback saved! <a href='/'>Back</a>"
 
 if __name__ == "__main__":
+
     app.run(debug=True)
